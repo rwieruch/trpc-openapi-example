@@ -6,7 +6,21 @@ import { openApiDocument } from '../openapi';
 jestOpenAPI(openApiDocument);
 
 describe('GET /v1/search', () => {
-  it('should satisfy OpenAPI spec', async () => {
+  it('query', async () => {
+    const res = await axios.get(
+      'http://localhost:4000/api/v1/search',
+      {
+        params: {
+          query: 'react',
+        },
+      }
+    );
+
+    expect(res.status).toEqual(200);
+    expect(res).toSatisfyApiSpec();
+  });
+
+  it('query, page', async () => {
     const res = await axios.get(
       'http://localhost:4000/api/v1/search',
       {

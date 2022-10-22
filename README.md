@@ -22,6 +22,6 @@ Visit `http://localhost:4000/` for Swagger UI
 - open /v1/search and "Try it out"
 - e.g. `{ query: 'react' }` or `{ query: 'react', page: '1' }`
 
-Visit `http://localhost:4000/api/v1/search?query=react&page=1` for the mirrored API
+Visit `http://localhost:4000/api/v1/search?query=react` or `http://localhost:4000/api/v1/search?query=react&page=1` for the mirrored API endpoint
 
 Optionally run tests against your mirrored API vs remote API: `yarn test`
